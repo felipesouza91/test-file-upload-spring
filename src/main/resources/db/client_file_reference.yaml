@@ -1,0 +1,23 @@
+databaseChangeLog:
+- changeSet:
+    id: 03
+    author: felipe-souza
+    changes:
+      - createTable:
+          tableName: client_file_references
+          ifNotExists: true
+          columns:
+          - column:
+              name: id_client
+              type: bigint(255)
+              constraints:
+                  nullable: false
+                  foreignKeyName: fk_client_id_client_file_references_table
+                  references: clients(id)
+          - column:
+              name: id_file_reference
+              type: bigint(20)
+              constraints:
+                  nullable: false
+                  foreignKeyName: fk_file_reference_id_client_file_references_table
+                  references: file_reference(id)

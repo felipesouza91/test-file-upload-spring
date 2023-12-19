@@ -1,0 +1,8 @@
+databaseChangeLog:
+   - include:
+       file: classpath:db/client.yaml
+   - include:
+       file: classpath:db/file_reference.yaml
+   - include:
+       file: classpath:db/client_file_reference.yaml
+    

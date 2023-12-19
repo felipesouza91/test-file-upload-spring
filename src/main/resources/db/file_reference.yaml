@@ -1,0 +1,35 @@
+
+databaseChangeLog:
+-  changeSet:  
+    id:  01
+    author:  felipe-souza
+    changes:
+    - createTable:
+        tableName: file_reference
+        columns:
+        - column:
+            name: id
+            type: bigint(20)
+            autoIncrement: true
+            constraints: 
+              primaryKey: true
+        - column:
+            name: file_name
+            type: varchar(255)
+            constraints:
+              unique: true
+              nullable: true
+        - column:
+            name: original_file_name
+            type: varchar(255)
+        - column:
+            name: content_type
+            type: varchar(20)
+        - column:
+            name: temp
+            type: boolean
+            constraints:
+              nullable: true
+        - column:
+            name: created_at
+            type: timestamp
